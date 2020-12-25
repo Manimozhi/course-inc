@@ -1,0 +1,13 @@
+<p>home-page works!</p>
+<course-inc-courses [courses]="courses"></course-inc-courses>
+<ul>
+    <li *ngFor="let course of courses ">
+      <a [routerLink]="['/course']" [queryParams]="{ id:course.id}" routerLinkActive="active">
+        <p>{{ course.name }}</p>
+      </a>
+      <a [routerLink]="['/course/', { id:course.id}]"><p>{{ course.name }}</p></a>
+      <a [routerLink]="['/course/', course.id]"><p>{{ course.name }}</p></a>
+    </li>
+  </ul>
+  <ng2-smart-table [settings]="settings" [source]="dsource"  (custom)="onCustom($event)" ></ng2-smart-table>
+  
